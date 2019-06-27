@@ -2,14 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ngrxstore</title>
+  <title>Redux</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
+
+<!-- src/app/app.component.html -->
+
+<link
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-sign-in.min.css"
+  type="text/css"
+  rel="stylesheet"/>
+<link
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-theme.css"
+  type="text/css"
+  rel="stylesheet"/>
+
 <body>
+  <button routerLink="/"> Home </button>
+  <button *ngIf="!isAuthenticated" routerLink="/login"> Login </button>
+  <button *ngIf="isAuthenticated" (click)="logout()"> Logout </button>
+  <button routerLink="/protected"> Protected </button>
+
   <app-root></app-root>
 </body>
 </html>
